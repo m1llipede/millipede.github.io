@@ -9,30 +9,20 @@
 	<body>
 		<script src="js/three.js"></script>
 		<script>
-			var scene = new THREE.Scene();
-			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
- 
-			var renderer = new THREE.WebGLRenderer();
-			renderer.setSize( window.innerWidth, window.innerHeight );
-			document.body.appendChild( renderer.domElement );
- 
-			var geometry = new THREE.BoxGeometry();
-			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-			var cube = new THREE.Mesh( geometry, material );
-			scene.add( cube );
- 
-			camera.position.z = 5;
- 
-			var animate = function () {
-				requestAnimationFrame( animate );
- 
-				cube.rotation.x += 0.01;
-				cube.rotation.y += 0.01;
- 
-				renderer.render( scene, camera );
-			};
- 
-			animate();
+context.translate(400, 400);
+const radius = 350;
+const res = 100;
+const slice = Math.PI * 2 / res;
+const mult = 2;
+
+context.beginPath();
+for(let i = 1; i < res; i++) {
+  let a1 = slice * i;
+  let a2 = slice * i * mult;
+  context.moveTo(Math.cos(a1) * radius, Math.sin(a1) * radius);
+  context.lineTo(Math.cos(a2) * radius, Math.sin(a2) * radius);
+}
+context.stroke();
 		</script>
 	</body>
 </html>
