@@ -9,7 +9,7 @@
 
 	<body>
 		<div id="info">
-			Shoe 3D Visualizer Test
+			Shoe 3D Visualizer Test2
 		</div>
 
 		<script type="module">
@@ -57,8 +57,8 @@
 						// use of RoughnessMipmapper is optional
 						var roughnessMipmapper = new RoughnessMipmapper( renderer );
 
-						var loader = new GLTFLoader().setPath( 'models/gltf/sneakers_3d_scan/' );
-						loader.load( 'scene.gltf', function ( gltf ) {
+						var loader = new GLTFLoader().setPath( 'models/gltf/sketchers_shoes/' );
+						loader.load( 'shoe.gltf', function ( gltf ) {
 
 							gltf.scene.traverse( function ( child ) {
 
